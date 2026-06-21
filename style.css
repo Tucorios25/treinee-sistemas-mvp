@@ -1,3 +1,4 @@
+/* Resets básicos e tipografia */
 * {
     margin: 0;
     padding: 0;
@@ -6,131 +7,246 @@
 }
 
 body {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #9e9e9e; /* Cor base principal do fundo */
+    color: #ffffff; /* Texto branco para alto contraste */
     line-height: 1.6;
 }
 
+/* Cabeçalho e Menu (Navegação) */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #03265e;
-    padding: 15px;
+    height: 60px; /* Definida altura fixa para a barra não esticar */
+    background-color: #000000; /* Preto clássico na barra superior */
+    z-index: 1000;
+    border-bottom: 1px solid #9e9e9e; /* Linha divisória cinza */
     display: flex;
     justify-content: center;
-    gap: 20px;
-    z-index: 1000;
-    border-bottom: 4px solid #ff8400;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; /* Centraliza verticalmente o ícone e os links */
+    height: 100%;
+}
+
+/* Redimensionamento e controle total do tamanho da imagem */
+.navbar-logo {
+    width: auto; 
+    height: 40px; /* Define o tamanho máximo vertical do chapéu */
+    max-height: 100%;
+    object-fit: contain; /* Impede a distorção da imagem */
+    margin-right: 30px; /* Espaço seguro antes de iniciar os links do menu */
+    display: block;
+}
+
+.menu-links {
+    display: flex;
+    gap: 25px; /* Espaçamento entre as opções do menu */
+    align-items: center;
 }
 
 .navbar a {
-    color: #ffffff;
+    color: #9e9e9e; /* Letras do menu na cor cinza escuro */
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
 .navbar a:hover {
-    color: #ff8400;
+    color: #ffffff; /* Cor ao passar o mouse */
 }
 
+/* Estrutura das Seções (Padrão para todas as páginas) */
 .section {
-    padding: 100px 20px 60px 20px;
+    padding: 140px 20px 60px 20px; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: #30302f;
 }
 
-.landing-page { 
-    background-color: #ffffff; 
-}
-
-.landing-page h1 {
-    color: #03265e;
-    margin-bottom: 10px;
-}
-
-.intro-images {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.intro-images img {
-    border: 3px solid #ff8400;
-    border-radius: 8px;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-.historia-page {
-    background-color: #03265e;
+h1, h2 {
     color: #ffffff;
-}
-
-.historia-page h2 {
-    color: #ff8400;
     margin-bottom: 15px;
 }
 
-.galeria-page {
-    background-color: #ffffff;
+p {
+    color: #ffffff;
+    max-width: 600px;
 }
 
-.galeria-page h2 {
-    color: #03265e;
+/* Contêiner padrão para os resumos das seções na Home */
+.home-container-resumo {
+    max-width: 650px;
+    width: 100%;
+    padding: 30px;
+}
+
+.home-container-resumo h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
     margin-bottom: 20px;
+    letter-spacing: -1px;
 }
 
+.home-container-resumo p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+
+/* Botão personalizado padrão: Borda branca, fundo preto e letra branca */
+.btn-redirect {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #000000; 
+    color: #ffffff; 
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: 2px solid #ffffff; 
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efeito Hover: Inverte as cores */
+.btn-redirect:hover {
+    background-color: #ffffff; 
+    color: #000000; 
+    border-color: #ffffff; 
+}
+
+/* Configurações específicas da Hero Section (Home) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #30302f;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; 
+    align-items: center;
+}
+
+.hero-content-left {
+    flex: 1; 
+    text-align: left; 
+    padding: 20px 0; 
+}
+
+.hero-content-right {
+    flex: 1; 
+}
+
+.hero-name {
+    font-size: 4.5rem; 
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: #ffffff;
+    max-width: 580px; 
+    margin: 0; 
+    text-align: left; 
+    opacity: 0.9;
+}
+
+/* Classe para evitar quebra de linha de termos específicos */
+.no-break {
+    white-space: nowrap;
+}
+
+/* --- ESTILIZAÇÃO DAS SEÇÕES DA HOME --- */
+
+/* Seção Sobre */
+.sobre-home-section {
+    background-color: #000000; 
+    border-top: 1px solid #9e9e9e;
+}
+
+/* Seção Galeria - Gradiente sutil para diferenciação */
+.galeria-home-section {
+    background: linear-gradient(180deg, #30302f 0%, #1a1a19 100%);
+    border-top: 1px solid #9e9e9e;
+}
+
+/* Seção Currículo - Estilo caixa em destaque */
+.curriculo-home-section {
+    background-color: #30302f;
+    border-top: 1px solid #9e9e9e;
+}
+
+.home-container-resumo.card-style {
+    background-color: #1a1a19;
+    border: 2px solid #9e9e9e;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Seção Projetos */
+.projetos-home-section {
+    background-color: #000000;
+    border-top: 1px solid #9e9e9e;
+}
+
+/* --- Estilização da Página da Galeria --- */
 .grid-galeria {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     width: 100%;
     max-width: 1000px;
+    margin-top: 20px;
 }
 
 .grid-galeria img {
     width: 100%;
-    height: 250px;
+    height: 250px; 
     object-fit: cover; 
     border: 2px solid #000000;
     border-radius: 5px;
 }
 
-
-
-.curriculo-page {
-    background-color: #ff8400;
-}
-
-.curriculo-page h2 {
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
+/* --- Estilização Personalizada da Página do Currículo --- */
 .curriculo-box {
-    background: #ffffff;
-    color: #000000;
+    background: #ffffff; 
+    color: #000000; 
     padding: 40px;
     border-radius: 12px;
-    border: 4px solid #03265e;
+    border: 4px solid #000000;
     text-align: left;
     max-width: 700px;
     width: 100%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
 }
 
-/* Itens do Currículo com Linha Divisória */
 .curriculo-item {
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0; 
     transition: transform 0.3s ease, padding-left 0.3s ease;
 }
 
@@ -140,21 +256,21 @@ body {
     padding-bottom: 0;
 }
 
-/* Animação Hover nos Blocos do Currículo */
+/* Animações Hover no Bloco do Currículo */
 .curriculo-item:hover {
-    transform: translateX(10px);
+    transform: translateX(10px); 
     padding-left: 5px;
 }
 
 .curriculo-box h3 { 
     margin-top: 0; 
-    color: #03265e; 
+    color: #000000; 
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
 }
 
-/* Linha decorativa animada embaixo dos títulos internos */
+/* Linha decorativa preta animada embaixo dos títulos do currículo */
 .curriculo-box h3::after {
     content: '';
     position: absolute;
@@ -162,7 +278,7 @@ body {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #ff8400;
+    background-color: #000000;
     transition: width 0.3s ease;
 }
 
@@ -170,10 +286,45 @@ body {
     width: 100%;
 }
 
-.curriculo-item p, .curriculo-item strong {
-    transition: color 0.3s ease;
-}
-
-.curriculo-item:hover p {
-    color: #333333;
+/* --- Responsividade Geral para Celulares --- */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+    }
+    .navbar-container {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar-logo {
+        margin-right: 0;
+        height: 35px;
+    }
+    .menu-links {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .hero-container {
+        flex-direction: column; 
+    }
+    .hero-name {
+        font-size: 3rem;
+    }
+    .hero-content-left {
+        text-align: center; 
+        padding: 20px;
+    }
+    .hero-description {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .grid-galeria {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .curriculo-box {
+        padding: 20px;
+    }
+    .home-container-resumo h2 {
+        font-size: 2rem;
+    }
 }
