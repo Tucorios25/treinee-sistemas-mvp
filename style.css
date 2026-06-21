@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #03265e;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+    border-bottom: 4px solid #ff8400;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff8400;
+}
+
+.section {
+    padding: 100px 20px 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.landing-page { 
+    background-color: #ffffff; 
+}
+
+.landing-page h1 {
+    color: #03265e;
+    margin-bottom: 10px;
+}
+
+.intro-images {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.intro-images img {
+    border: 3px solid #ff8400;
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.historia-page {
+    background-color: #03265e;
+    color: #ffffff;
+}
+
+.historia-page h2 {
+    color: #ff8400;
+    margin-bottom: 15px;
+}
+
+.galeria-page {
+    background-color: #ffffff;
+}
+
+.galeria-page h2 {
+    color: #03265e;
+    margin-bottom: 20px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+
+
+.curriculo-page {
+    background-color: #ff8400;
+}
+
+.curriculo-page h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.curriculo-box {
+    background: #ffffff;
+    color: #000000;
+    padding: 40px;
+    border-radius: 12px;
+    border: 4px solid #03265e;
+    text-align: left;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Itens do Currículo com Linha Divisória */
+.curriculo-item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    transition: transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.curriculo-item.no-border {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Animação Hover nos Blocos do Currículo */
+.curriculo-item:hover {
+    transform: translateX(10px);
+    padding-left: 5px;
+}
+
+.curriculo-box h3 { 
+    margin-top: 0; 
+    color: #03265e; 
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Linha decorativa animada embaixo dos títulos internos */
+.curriculo-box h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #ff8400;
+    transition: width 0.3s ease;
+}
+
+.curriculo-item:hover h3::after {
+    width: 100%;
+}
+
+.curriculo-item p, .curriculo-item strong {
+    transition: color 0.3s ease;
+}
+
+.curriculo-item:hover p {
+    color: #333333;
+}
